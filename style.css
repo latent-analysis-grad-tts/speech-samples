@@ -215,6 +215,24 @@ body {
   /* Align text within content to the left */
 }
 
+.colored-box {
+  background-color: aliceblue;
+  /* Sets the background color inside */
+  padding: 10px;
+  /* Adds space between the text and the box */
+  border-radius: 15px;
+  /* Creates rounded corners with a radius of 10 pixels */
+}
+
+.colored-box-abstract {
+  background-color: linen;
+  /* Sets the background color inside */
+  padding: 10px;
+  /* Adds space between the text and the box */
+  border-radius: 15px;
+  /* Creates rounded corners with a radius of 10 pixels */
+}
+
 /* Adding margin to the element after the table */
 .after-table-content {
   margin-top: 250px;
