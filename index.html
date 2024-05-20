@@ -35,7 +35,7 @@
             <h2>Abstract</h2>
             <!-- <center><img src="arch.png" style="width:50%"></center>
             <br> -->
-            <div class="content">
+            <div class="abstract-content">
                 <p>The incorporation of Denoising Diffusion Models (DDMs) in the Text-to-Speech (TTS) domain is rising,
                     providing great value in synthesizing high quality speech. Although they exhibit impressive audio
                     quality, the extent of their semantic capabilities is unknown, and controlling their synthesized
@@ -58,8 +58,24 @@
     </div>
 
     <div class="centered-content" id="supervised">
-        <h2>Latent space editing</h2>
+        <h2>Supervised latent space editing</h2>
+        <div class="content">
+            <p>Latent space editing during sample generation along a direction defined in a supervised manner allows
+                control
+                over selected vocal attributes, such as the perceived speaker's gender. Such an editing direction can be
+                defined by selecting several pairs of positive (eg. male) and negative (eg. female) samples, and
+                averaging the pairwise differences of
+                their latent vectors.</p>
+            <p>Then, applying that direction with different scales to the latent vector of generated samples alters that
+                vocal attribute of the sample, by different magnitudes.
+        </div>
         <h3>Male-to-female</h3>
+        <div class="content">
+            <p>Below are samples edited along a male-to-female editing
+                direction, as an illustrative example. Note that when
+                &lambda; = 0, no editing is performed.</p>
+            </p>
+        </div>
         <table class="table table-responsive">
             <thead>
                 <tr class="vertical edge text-center">
@@ -589,8 +605,21 @@
 
     <div class="centered-content" id="abstractdiv">
         <h2>Speaker embedding space editing</h2>
+        <div class="content">
+            <p>A baseline comparable to latent space editing can be speaker embedding editing. Here, the editing
+                direction for a specific vocal attribute is defined in a similar manner as before, using the sample's
+                speaker embedding instead of its latent vector: selecting several
+                pairs of positive (eg. male) and negative (eg. female) samples, the pairwise differences of their
+                speaker embeddings are averaged.</p>
+            <p>However, applying that direction with different scales to the speaker embedding and using it to generate
+                samples, does not produce satisfying results.</p>
+        </div>
         <h3>Male-to-female</h3>
-        <p> * Note the collapse to male voice in both ends of the scale</p>
+        <div class="content">
+            <p>Below are samples edited in their speaker embedding space along the male-to-female direction. Notice
+                the collapse to male voice in both ends of the scale, as well as the non-interpretable speech when using
+                larger scales.</p>
+        </div>
 
         <table class="table table-responsive">
             <thead>
@@ -986,7 +1015,15 @@
 
 
     <div class="centered-content" id="abstractdiv">
-        <h2>PC editing</h2>
+        <h2>Principal Component latent space editing</h2>
+        <div class="content">
+            <p>The latent space of diffusion-based TTS models inherently captures semantic information. Specifically,
+                the projections of latent vectors of samples onto the first Principal Components (PCs) correlate
+                with specific vocal attributes of the generated speech samples.
+                Furthermore, interpolation along the first PCs of the latent space alters these vocal attributes of the
+                generated samples.</p>
+        </div>
+
         <h3>PC1 - Male-to-female</h3>
         <table class="table table-responsive">
             <thead>

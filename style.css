@@ -197,9 +197,18 @@ body {
   /* Optionally center text within the container */
 }
 
-.content {
+.abstract-content {
   /* Set the width for content and align it to the left */
   width: 70%;
+  margin: 0 auto;
+  /* Center the content horizontally */
+  text-align: justify;
+  /* Align text within content to the left */
+}
+
+.content {
+  /* Set the width for content and align it to the left */
+  width: 85%;
   margin: 0 auto;
   /* Center the content horizontally */
   text-align: justify;
