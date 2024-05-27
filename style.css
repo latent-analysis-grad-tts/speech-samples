@@ -239,6 +239,17 @@ body {
   /* Adjust the value to add space after the table */
 }
 
+.cropped-image {
+  width: 100%;
+  /* Adjust width as needed */
+  height: 350px;
+  /* Adjust height as needed */
+  object-fit: cover;
+  /* Crops image to fit container dimensions */
+  object-position: top;
+  /* Positions the cropped area (default is center) */
+}
+
 /* Media query for smaller screens */
 @media (max-width: 1512px) {
   body {
